@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="BITMiniCC-obf">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/lib/BITMiniCC-obf.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
