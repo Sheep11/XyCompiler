@@ -1,6 +1,7 @@
 package bit.minisys.minicc;
 
 import bit.minisys.minicc.parser.LRMaster;
+import bit.minisys.minicc.scanner.XyScanner;
 
 public class BITMiniCC {
 	
@@ -14,9 +15,13 @@ public class BITMiniCC {
 			return;
 		}
 
+		XyScanner scanner=new XyScanner();
+		scanner.run("input/h1.c");
+
 		LRMaster master=new LRMaster();
 		String [] inputs={"id","*","id","+","id","$"};
-		master.run(inputs);
+		master.parse(inputs);
+		master.tree.printTree();
 
 
 

@@ -19,8 +19,9 @@ public class LRMaster {
     ArrayList<HashMap<String, Action>> actionTable;
     ArrayList<HashMap<String, Integer>> gotoTable;
 
+    public SyntaxTree tree=new SyntaxTree();
 
-    public LRMaster(){
+    public LRMaster() throws Exception {
         setProductions("grammer.txt");
         setNonTerminals();
         setTerminals();
@@ -29,7 +30,7 @@ public class LRMaster {
         initTable();
     }
 
-    public void run(String[] inputs){
+    public void parse(String[] inputs){
         Stack<Integer> stateStack=new Stack<>();
         stateStack.push(0);
         for(int i=0;i<inputs.length;i++){
@@ -41,6 +42,7 @@ public class LRMaster {
                     break;
                 case "move":
                     stateStack.push(action.intMove);
+                    tree.move(action.left);
                     System.out.println("move state " + action.intMove + " to stack\n");
                     break;
                 case "reduce":
@@ -52,6 +54,8 @@ public class LRMaster {
                     stateStack.push(gotoState);
 
                     i--;
+
+                    tree.reduce(action.left,action.right.length);
                     System.out.printf("reduce [%s] to [%s], move state [%d] to stack\n", action.right.toString(), action.left, gotoState);
                     break;
                 default:
@@ -275,7 +279,7 @@ public class LRMaster {
                 if(item.dotIndex!=item.right.length) {
                     int move = getGOTOIndex(Cluster.get(i), item.right[item.dotIndex]);
                     if(terminals.contains(item.right[item.dotIndex]))
-                        actionTable.get(i).put(item.right[item.dotIndex], new Action("move",move,null,null));
+                        actionTable.get(i).put(item.right[item.dotIndex], new Action("move",move,item.right[item.dotIndex],null));
                     else
                         gotoTable.get(i).put(item.right[item.dotIndex],move);
                 }
