@@ -45,9 +45,7 @@ public class SyntaxTree {
         nodeStack.push(child);
     }
 
-    public void printTree() throws Exception{
-
-
+    public void printTree(String oFile) throws Exception{
         Element root=doc.createElement("project");
         root.setAttribute("name","Syntax tree");
         doc.appendChild(root);
@@ -57,14 +55,25 @@ public class SyntaxTree {
         TransformerFactory tsff=TransformerFactory.newInstance();
         Transformer tsf=tsff.newTransformer();
         tsf.setOutputProperty(OutputKeys.INDENT,"yes");
-        tsf.transform(new DOMSource(doc),new StreamResult(new File("analysis_tree.xml")));
+        tsf.transform(new DOMSource(doc),new StreamResult(new File(oFile)));
 
     }
 
     static void printNode(Element root, SyntaxNode node){
         if(node.childs.size()==0) {
-            Element e=doc.createElement("Terminal");
-            e.setTextContent(node.value);
+            String[] value_and_type=node.value.split("@@");
+            String value,type;
+            if(value_and_type[0].equals("Identifier")||value_and_type[0].equals("String")||value_and_type[0].equals("Integer")) {
+                value = value_and_type[1];
+                type =value_and_type[0];
+            }
+            else{
+                value = value_and_type[0];
+                type =value_and_type[1];
+            }
+
+            Element e=doc.createElement(type);
+            e.setTextContent(value);
             root.appendChild(e);
             return;
         }
@@ -73,6 +82,30 @@ public class SyntaxTree {
 
         for(int i=node.childs.size() - 1;i>=0;i--){
             printNode(e, node.childs.get(i));
+        }
+    }
+
+    static void printSimpleNode(Element root, SyntaxNode node){
+        if(node.childs.size()==0) {
+            String[] value_and_type=node.value.split("@@");
+            String value,type;
+            if(value_and_type[0].equals("Identifier")||value_and_type[0].equals("String")||value_and_type[0].equals("Integer")) {
+                value = value_and_type[1];
+                type =value_and_type[0];
+            }
+            else{
+                value = value_and_type[0];
+                type =value_and_type[1];
+            }
+
+            Element e=doc.createElement(type);
+            e.setTextContent(value);
+            root.appendChild(e);
+            return;
+        }
+
+        for(int i=node.childs.size() - 1;i>=0;i--){
+            printNode(root, node.childs.get(i));
         }
     }
 }

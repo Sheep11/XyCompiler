@@ -1,4 +1,3 @@
-// bubble sort
 int main() {
   int a[5], i, j, t;
   for(i = 0; i < 5; i++) {

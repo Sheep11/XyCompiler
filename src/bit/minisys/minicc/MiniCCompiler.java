@@ -149,7 +149,7 @@ public class MiniCCompiler {
 				if(parsing.path != ""){
 					Class<?> c = Class.forName(parsing.path);
 					Method method = c.getMethod("run", String.class);
-					filename = (String)method.invoke(c.newInstance(), cFile);
+					filename = (String)method.invoke(c.newInstance(), filename);
 				}else{
 					MiniCCParser p = new MiniCCParser();
 					filename = p.run(filename);

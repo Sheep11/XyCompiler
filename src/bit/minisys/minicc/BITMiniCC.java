@@ -1,7 +1,12 @@
 package bit.minisys.minicc;
 
 import bit.minisys.minicc.parser.LRMaster;
+import bit.minisys.minicc.parser.SyntaxTree;
+import bit.minisys.minicc.parser.Token;
+import bit.minisys.minicc.parser.XyParser;
 import bit.minisys.minicc.scanner.XyScanner;
+
+import java.util.ArrayList;
 
 public class BITMiniCC {
 	
@@ -14,17 +19,6 @@ public class BITMiniCC {
 			usage();
 			return;
 		}
-
-		XyScanner scanner=new XyScanner();
-		scanner.run("input/h1.c");
-
-		LRMaster master=new LRMaster();
-		String [] inputs={"id","*","id","+","id","$"};
-		master.parse(inputs);
-		master.tree.printTree();
-
-
-
 		String file = args[0];
 		if(!file.endsWith(".c")){
 			System.out.println("Incorrect input file:" + file);

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project name="Syntax tree">
+    <S>
+        <units>
+            <unit>
+                <declaration>
+                    <type-specifier>
+                        <Keyword>int</Keyword>
+                    </type-specifier>
+                    <init-declarator-list>
+                        <init-declarator-list>
+                            <init-declarator>
+                                <declarator>
+                                    <Identifier>a</Identifier>
+                                </declarator>
+                            </init-declarator>
+                        </init-declarator-list>
+                        <SEP>,</SEP>
+                        <init-declarator>
+                            <declarator>
+                                <Identifier>b</Identifier>
+                            </declarator>
+                        </init-declarator>
+                    </init-declarator-list>
+                    <SEP>;</SEP>
+                </declaration>
+            </unit>
+        </units>
+    </S>
+</project>

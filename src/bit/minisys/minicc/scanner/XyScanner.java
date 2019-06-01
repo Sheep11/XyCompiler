@@ -37,8 +37,8 @@ public class XyScanner implements IMiniCCScanner{
 
         String oFile=iFile.substring(iFile.lastIndexOf('/')+1,iFile.lastIndexOf('.'));
         oFile+="_XyTokens.xml";
-        FileOutputStream out=new FileOutputStream(oFile);
         System.out.println("XyScanner out:"+oFile);
+        System.out.println("完整语法复杂，LR(1)分析表构建需要一定时间，大约1分钟(或者更久...qvq)");
 
         readChar();
         col=0;

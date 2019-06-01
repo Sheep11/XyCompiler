@@ -1,8 +1,8 @@
 package bit.minisys.minicc.parser;
 
+import javax.sound.midi.Sequence;
 import java.io.File;
 import java.io.RandomAccessFile;
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Stack;
@@ -15,35 +15,47 @@ public class LRMaster {
     ArrayList<String> nonterminals=new ArrayList<>();
     HashMap<String, ArrayList<String>> firsts=new HashMap<>();
 
-    ArrayList<ArrayList<Item>> Cluster;
+    ArrayList<ArrayList<Item>> Collection;
     ArrayList<HashMap<String, Action>> actionTable;
     ArrayList<HashMap<String, Integer>> gotoTable;
 
     public SyntaxTree tree=new SyntaxTree();
+    public ArrayList<Token> errors=new ArrayList<>();
 
-    public LRMaster() throws Exception {
-        setProductions("grammer.txt");
+    public LRMaster(String grammer) throws Exception {
+        setProductions(grammer);
         setNonTerminals();
         setTerminals();
         setFirst();
-        setItemCluster();
+        setItemCollection();
         initTable();
     }
 
-    public void parse(String[] inputs){
+    //LR(1) control program
+    public void parse(Token[] inputs){
         Stack<Integer> stateStack=new Stack<>();
         stateStack.push(0);
         for(int i=0;i<inputs.length;i++){
             int state=stateStack.peek();
-            Action action=actionTable.get(state).get(inputs[i]);
+            Action action=actionTable.get(state).get(inputs[i].lex);
+
+            //error recovery
+            if(action==null) {
+                errors.add(inputs[i]);
+                while (i<inputs.length && !inputs[i].value.equals(";") && !inputs[i].value.equals("}"))
+                    i++;
+                i-=1;
+                continue;
+            }
+
             switch (action.type) {
                 case "acc":
                     System.out.println("accepted\n");
                     break;
                 case "move":
                     stateStack.push(action.intMove);
-                    tree.move(action.left);
-                    System.out.println("move state " + action.intMove + " to stack\n");
+                    tree.move(action.left+"@@"+inputs[i].value);
+                    System.out.println("move " +action.left);
                     break;
                 case "reduce":
                     int reduceLen = action.right.length;
@@ -56,7 +68,8 @@ public class LRMaster {
                     i--;
 
                     tree.reduce(action.left,action.right.length);
-                    System.out.printf("reduce [%s] to [%s], move state [%d] to stack\n", action.right.toString(), action.left, gotoState);
+                    String s=action.right.toString();
+                    System.out.printf("reduce to [%s], move state [%d] to stack\n", action.left, gotoState);
                     break;
                 default:
             }
@@ -71,87 +84,87 @@ public class LRMaster {
         return -1;
     }
 
-    // 从文件中读取产生式
-    public void setProductions(String grammerPath){
+    // read grammer from file
+    private void setProductions(String grammerPath){
         try {
             File file = new File(grammerPath);
             RandomAccessFile randomfile = new RandomAccessFile(file, "r");
             String line;
             Production production;
             while ((line=randomfile.readLine())!=null) {
+                if(line.equals("")) continue;
                 production = new Production(line);
                 productions.add(production);
             }
             randomfile.close();
         } catch (Exception e) {
-            // TODO: handle exception
             e.printStackTrace();
         }
     }
 
-    // 获得非终结符集
-    public void setNonTerminals(){
+    //set nonterminals, every left of a production is a nonterminal
+    private void setNonTerminals(){
         for(Production p:productions){
             if(!nonterminals.contains(p.left))
                 nonterminals.add(p.left);
         }
     }
 
-    // 获得终结符集,依赖于获得产生式函数
-    public void setTerminals() {
+    //set terminals, if it's not a nonterminal, it's a terminal
+    private void setTerminals() {
         terminals.add("$");
 
-        // 遍历所有的产生式
         for (Production p : productions) {
             for (String[] right : p.rights) {
-                for (String symbol : right)
-                    if (!nonterminals.contains(symbol))
+                for (String symbol : right) {
+                    if (!nonterminals.contains(symbol) && !terminals.contains(symbol))
                         terminals.add(symbol);
+                }
             }
         }
     }
 
-    // 获取First集
-    public void setFirst(){
-        // 终结符全部求出first集
+    //get firsts of terminals and nonterminals, for getFirst func
+    private void setFirst(){
+        // set every terminal
         ArrayList<String> first;
         for (String terminal:terminals) {
-            first = new ArrayList<String>();
+            first = new ArrayList<>();
             first.add(terminal);
             firsts.put(terminal, first);
         }
-        // 给所有非终结符注册一下
+        // init every nonterminals
         for (String nonterminal:nonterminals) {
-            first = new ArrayList<String>();
+            first = new ArrayList<>();
             firsts.put(nonterminal, first);
         }
 
         boolean flag;
         String left;
-        // 非终结符的first集
-        while (true) {
+        // set nonterminals
+        do {
             flag = true;
-            for (Production p:productions) {
-                left=p.left;
-                for(String[] right:p.rights)
-                    for(String symbol:right){
-                        ArrayList<String> new_firsts=firsts.get(symbol);
-                        for(String first_iter:new_firsts) {
+            for (Production p : productions) {
+                left = p.left;
+                for (String[] right : p.rights)
+                    //if epsilon in right
+                    for (String symbol : right) {
+                        ArrayList<String> new_firsts = firsts.get(symbol);
+                        for (String first_iter : new_firsts) {
                             if (!firsts.get(left).contains(first_iter)) {
                                 firsts.get(left).add(first_iter);
-                                flag=false;
+                                flag = false;
                             }
                         }
-                        if(!new_firsts.contains("#"))
+                        if (!new_firsts.contains("#"))
                             break;
                     }
             }
-            if (flag==true)
-                break;
-        }
+        } while (!flag);
     }
 
-    public ArrayList<String> getFirst(ArrayList<String> words){
+    //get firsts of a phase, based on ArrayList firsts
+    private ArrayList<String> getFirst(ArrayList<String> words){
         ArrayList<String> result=new ArrayList<>();
         for(String word:words){
             for(String first:firsts.get(word)) {
@@ -165,8 +178,8 @@ public class LRMaster {
         return result;
     }
 
-    public ArrayList<Item> getClosure(ArrayList<Item> I){
-        boolean changed=false;
+    private ArrayList<Item> getClosure(ArrayList<Item> I){
+        boolean changed;
         do{
             changed=false;
             //every Item in I
@@ -195,60 +208,48 @@ public class LRMaster {
         return I;
     }
 
-    public ArrayList<Item> getGOTO(ArrayList<Item> I, String symbol){
+    private ArrayList<Item> getGOTO(ArrayList<Item> I, String symbol){
         ArrayList<Item> J=new ArrayList<>();
         for(Item item:I) {
             if(item.dotIndex==item.right.length) continue;
             if (!item.right[item.dotIndex].equals(symbol))
                 continue;
 
-            if (item.dotIndex < item.right.length) {
-                Item newItem=new Item(item);
-                newItem.dotIndex++;
-                J.add(newItem);
-            }
+            Item newItem=new Item(item);
+            newItem.dotIndex++;
+            J.add(newItem);
         }
         return getClosure(J);
     }
 
-    public int getGOTOIndex(ArrayList<Item> I, String symbol){
-        ArrayList<Item> J=getGOTO(I,symbol);
-        for(int i=0;i<Cluster.size();i++){
-            if(Item.Iequals(J,Cluster.get(i)))
-                return i;
-        }
-        return -1;
-    }
-
-    public boolean Ccontains(ArrayList<ArrayList<Item>> C, ArrayList<Item>Ia){
-        for(ArrayList<Item> Ib:C){
-            if(Item.Iequals(Ia,Ib))
-                return true;
-        }
-        return false;
-    }
-
-    void setItemCluster(){
-        Cluster=new ArrayList<ArrayList<Item>>();
+    //get LR(1) collection
+    private void setItemCollection(){
+        Collection= new ArrayList<>();
         ArrayList<String> allSymbol=new ArrayList<>();
+        //get all symbols
         allSymbol.addAll(nonterminals);
         allSymbol.addAll(terminals);
 
+        //init collection, add start I
         Item startItem=new Item("S'", new String[]{"S"},0,"$");
         ArrayList<Item> I0=new ArrayList<>();
         I0.add(startItem);
 
-        Cluster.add(getClosure(I0));
-        boolean changed=false;
+        Collection.add(getClosure(I0));
+        boolean changed;
         do{
             changed=false;
-            int size=Cluster.size();
+            int size=Collection.size();
+            //for every I in collection
             for(int i=0;i<size;i++){
-                ArrayList<Item> I=Cluster.get(i);
+                ArrayList<Item> I=Collection.get(i);
+                //for every symbol in all symbols
                 for(String symbol:allSymbol){
+                    //get Ij and see whether it has existed
                     ArrayList<Item> newI=getGOTO(I,symbol);
-                    if(newI.size()!=0 && !Ccontains(Cluster,newI)) {
-                        Cluster.add(newI);
+                    //if not, add it to Collection
+                    if(newI.size()!=0 && !Ccontains(Collection,newI)) {
+                        Collection.add(newI);
                         changed=true;
                     }
                 }
@@ -256,36 +257,55 @@ public class LRMaster {
         }while(changed);
     }
 
-    void initTable(){
+    //get analysis table
+    private void initTable(){
         actionTable=new ArrayList<>();
         gotoTable=new ArrayList<>();
-        for(int i=0;i<Cluster.size();i++){
-            actionTable.add(new HashMap<String,Action>());
-            gotoTable.add(new HashMap<String,Integer>());
+        for(int i=0;i<Collection.size();i++){
+            actionTable.add(new HashMap<>());
+            gotoTable.add(new HashMap<>());
         }
 
-        for(int i=0;i<Cluster.size();i++){
-            for(Item item:Cluster.get(i)){
+        for(int i=0;i<Collection.size();i++){
+            for(Item item:Collection.get(i)){
+                //S'->S·,$
                 if(item.left.equals("S'")&&item.dotIndex==item.right.length&&item.forwardSymbol.equals("$")) {
                     actionTable.get(i).put("$", new Action("acc", 0, null, null));
                     continue;
                 }
 
+                //A->alpha·,a
                 if(item.dotIndex==item.right.length) {
                     actionTable.get(i).put(item.forwardSymbol, new Action("reduce", 0, item.left, item.right));
                     continue;
                 }
 
-                if(item.dotIndex!=item.right.length) {
-                    int move = getGOTOIndex(Cluster.get(i), item.right[item.dotIndex]);
-                    if(terminals.contains(item.right[item.dotIndex]))
-                        actionTable.get(i).put(item.right[item.dotIndex], new Action("move",move,item.right[item.dotIndex],null));
-                    else
-                        gotoTable.get(i).put(item.right[item.dotIndex],move);
-                }
+                //A->alpha·a beta, b
+                int move = getGOTOIndex(Collection.get(i), item.right[item.dotIndex]);
+                if(terminals.contains(item.right[item.dotIndex]))
+                    actionTable.get(i).put(item.right[item.dotIndex], new Action("move",move,item.right[item.dotIndex],null));
+                else
+                    gotoTable.get(i).put(item.right[item.dotIndex],move);
             }
         }
 
         System.out.println(" ");
+    }
+
+    private int getGOTOIndex(ArrayList<Item> I, String symbol){
+        ArrayList<Item> J=getGOTO(I,symbol);
+        for(int i=0;i<Collection.size();i++){
+            if(Item.Iequals(J,Collection.get(i)))
+                return i;
+        }
+        return -1;
+    }
+
+    private boolean Ccontains(ArrayList<ArrayList<Item>> C, ArrayList<Item> Ia){
+        for(ArrayList<Item> Ib:C){
+            if(Item.Iequals(Ia,Ib))
+                return true;
+        }
+        return false;
     }
 }

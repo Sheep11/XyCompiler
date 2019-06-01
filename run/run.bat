@@ -1,0 +1,1 @@
+java -classpath ..\bin\bit-minic-compiler bit.minisys.minicc.BITMiniCC %1%

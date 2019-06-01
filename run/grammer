@@ -1,0 +1,12 @@
+S' : S
+S : units
+units : units unit | unit
+unit : statement | func-definition | declaration
+
+declaration : type-specifier init-declarator-list ;
+type-specifier : int | void | char | float | double
+init-declarator-list : init-declarator | init-declarator-list , init-declarator
+init-declarator : declarator | declarator = assignment-expression
+declarator : Identifier | declarator ( parameter-list ) | Identifier [ Integer ] | declarator ( )
+parameter-list : parameter-declaration | parameter-list , parameter-declaration
+parameter-declaration : type-specifier declarator
