@@ -1,0 +1,38 @@
+S' : S
+S : units
+units : units unit | unit
+unit : statement | func-definition | declaration
+
+declaration : type-specifier init-declarator-list ;
+type-specifier : int | void | char | float | double
+init-declarator-list : init-declarator | init-declarator-list , init-declarator
+init-declarator : declarator | declarator = assignment-expression
+declarator : Identifier | declarator ( parameter-list ) | Identifier [ Integer ] | declarator ( )
+parameter-list : parameter-declaration | parameter-list , parameter-declaration
+parameter-declaration : type-specifier declarator
+
+expression : assignment-expression | expression , assignment-expression
+assignment-expression : unary-expression assignment-operator assignment-expression | equality-expression
+unary-expression : postfix-expression | ++ unary-expression | -- unary-expression
+postfix-expression : postfix-expression ++ | postfix-expression -- | primary-expression | postfix-expression ( arg-expression-list ) | postfix-expression ( ) | postfix-expression [ expression ]
+arg-expression-list : arg-expression-list , assignment-expression | assignment-expression
+assignment-operator : = | -= | += | *= | /=
+equality-expression : relation-expression | equality-expression == relation-expression | equality-expression != relation-expression
+relation-expression : additive-expression | relation-expression < additive-expression | relation-expression > additive-expression | relation-expression <= additive-expression | relation-expression >= additive-expression
+additive-expression : multi-expression | additive-expression + multi-expression | additive-expression - multi-expression
+multi-expression : unary-expression | multi-expression * unary-expression | multi-expression / unary-expression | multi-expression % unary-expression
+primary-expression : Identifier | Integer | String | ( expression )
+
+statement : compound-statement | expression ; | selection-statement | iteration-statement | jump-statement
+
+compound-statement : { block-item-list }
+block-item-list : block-item | block-item-list block-item
+block-item : declaration | statement
+
+selection-statement : if ( expression ) statement | if ( expression ) statement else statement
+
+iteration-statement : while ( expression ) statement | for ( expression ; expression ; expression ) statement | do statement while ( expression ) ;
+
+jump-statement : continue ; | break ; | return expression ; | return ; | return expression ;
+
+func-definition : type-specifier declarator compound-statement

@@ -2,12 +2,9 @@ package bit.minisys.minicc.parser;
 import java.util.ArrayList;
 import java.util.Arrays;
 
-// 产生式类
 public class Production{
     String left;
     ArrayList<String []> rights= new ArrayList<>();
-
-    // 初始化select集
 
     public Production(String production){
         parseProduction(production);
@@ -26,13 +23,5 @@ public class Production{
         }
 
         return rights.size();
-    }
-
-    public String[] returnRight(int index){
-        return rights.get(index);
-    }
-
-    public String returnLeft(){
-        return left;
     }
 }

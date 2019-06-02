@@ -2,45 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="230a4cb8-09c1-403e-9167-defd36bd0972" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/bit/minisys/minicc/parser/Token.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/bit/minisys/minicc/BITMiniCC.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/bit/minisys/minicc/MiniCCCfg.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/bit/minisys/minicc/MiniCCompiler.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/bit/minisys/minicc/codegen/IMiniCCCodeGen.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/bit/minisys/minicc/icgen/IMiniCCICGen.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/bit/minisys/minicc/optimizer/IMiniCCOptimizer.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/bit/minisys/minicc/parser/Action.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/bit/minisys/minicc/parser/IMiniCCParser.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/bit/minisys/minicc/parser/Item.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/bit/minisys/minicc/parser/LRMaster.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/bit/minisys/minicc/parser/Production.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/bit/minisys/minicc/parser/XyParser.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/bit/minisys/minicc/pp/IMiniCCPreProcessor.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/bit/minisys/minicc/scanner/IMiniCCScanner.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/bit/minisys/minicc/scanner/Token.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/bit/minisys/minicc/scanner/XyScanner.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/bit/minisys/minicc/semantic/IMiniCCSemantic.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/bit/minisys/minicc/simulator/IMiniCCSimulator.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/bit/minisys/minicc/util/MiniCCUtil.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/config.xml" beforeDir="false" afterPath="$PROJECT_DIR$/config.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/doc/report.docx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/doc/repot.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/grammer.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/input/h2.c" beforeDir="false" afterPath="$PROJECT_DIR$/input/h2.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/bit-minic-compiler/bit/minisys/minicc/BITMiniCC.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/bit-minic-compiler/bit/minisys/minicc/BITMiniCC.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/bit-minic-compiler/bit/minisys/minicc/MiniCCompiler.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/bit-minic-compiler/bit/minisys/minicc/MiniCCompiler.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/bit-minic-compiler/bit/minisys/minicc/parser/LRMaster.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/bit-minic-compiler/bit/minisys/minicc/parser/LRMaster.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/bit-minic-compiler/bit/minisys/minicc/parser/XyParser.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/bit-minic-compiler/bit/minisys/minicc/parser/XyParser.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/bit-minic-compiler/bit/minisys/minicc/scanner/Token.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/bit-minic-compiler/bit/minisys/minicc/scanner/Token.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/bit-minic-compiler/bit/minisys/minicc/scanner/XyScanner.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/bit-minic-compiler/bit/minisys/minicc/scanner/XyScanner.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/bit/minisys/minicc/BITMiniCC.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/bit/minisys/minicc/BITMiniCC.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/bit/minisys/minicc/MiniCCompiler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/bit/minisys/minicc/MiniCCompiler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/input/a.c" beforeDir="false" afterPath="$PROJECT_DIR$/input/a.c" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/bit/minisys/minicc/parser/LRMaster.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/bit/minisys/minicc/parser/LRMaster.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/bit/minisys/minicc/parser/SyntaxTree.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/bit/minisys/minicc/parser/SyntaxTree.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/bit/minisys/minicc/parser/Production.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/bit/minisys/minicc/parser/Production.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/bit/minisys/minicc/parser/XyParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/bit/minisys/minicc/parser/XyParser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/bit/minisys/minicc/scanner/XyScanner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/bit/minisys/minicc/scanner/XyScanner.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -62,25 +28,25 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="java" value="57" />
+          <entry key="java" value="61" />
           <entry key="xml" value="4" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="JAVA" value="57" />
+          <entry key="JAVA" value="61" />
           <entry key="XML" value="4" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="java" value="28700" />
+          <entry key="java" value="28927" />
           <entry key="xml" value="257" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="28700" />
+          <entry key="JAVA" value="28927" />
           <entry key="XML" value="257" />
         </counts>
       </usages-collector>
@@ -91,20 +57,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/bit/minisys/minicc/BITMiniCC.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="460">
-              <caret line="31" column="4" selection-start-line="31" selection-start-column="4" selection-end-line="31" selection-end-column="4" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/bit/minisys/minicc/scanner/XyScanner.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="299">
-              <caret line="40" column="68" selection-start-line="40" selection-start-column="68" selection-end-line="40" selection-end-column="68" />
+            <state relative-caret-position="262">
+              <caret line="26" selection-start-line="26" selection-end-line="26" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -115,7 +69,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/bit/minisys/minicc/MiniCCompiler.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="754">
+            <state relative-caret-position="58">
               <caret line="98" column="4" selection-start-line="98" selection-start-column="4" selection-end-line="98" selection-end-column="4" />
             </state>
           </provider>
@@ -124,8 +78,20 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/bit/minisys/minicc/parser/XyParser.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="207">
-              <caret line="20" column="50" selection-start-line="20" selection-start-column="50" selection-end-line="20" selection-end-column="50" />
+            <state relative-caret-position="414">
+              <caret line="20" column="45" selection-start-line="20" selection-start-column="45" selection-end-line="20" selection-end-column="45" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/bit/minisys/minicc/parser/SyntaxTree.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="2477">
+              <caret line="118" column="32" selection-start-line="118" selection-start-column="32" selection-end-line="118" selection-end-column="32" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -136,8 +102,41 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/bit/minisys/minicc/parser/LRMaster.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="386">
-              <caret line="65" column="23" selection-start-line="65" selection-start-column="23" selection-end-line="65" selection-end-column="23" />
+            <state relative-caret-position="230">
+              <caret line="40" lean-forward="true" selection-start-line="40" selection-end-line="40" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/bit/minisys/minicc/parser/Action.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="115">
+              <caret line="5" column="15" selection-start-line="5" selection-start-column="15" selection-end-line="5" selection-end-column="15" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/bit/minisys/minicc/parser/Production.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="368">
+              <caret line="18" column="28" selection-start-line="18" selection-start-column="28" selection-end-line="18" selection-end-column="28" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/bit/minisys/minicc/parser/Item.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="506">
+              <caret line="22" column="35" selection-start-line="22" selection-start-column="35" selection-end-line="22" selection-end-column="35" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -174,18 +173,18 @@
         <option value="$PROJECT_DIR$/.idea/modules.xml" />
         <option value="$PROJECT_DIR$/.idea/workspace.xml" />
         <option value="$PROJECT_DIR$/src/bit/minisys/minicc/parser/AnalysisTable.java" />
-        <option value="$PROJECT_DIR$/src/bit/minisys/minicc/parser/Production.java" />
         <option value="$PROJECT_DIR$/src/bit/minisys/minicc/parser/Action.java" />
         <option value="$PROJECT_DIR$/src/bit/minisys/minicc/parser/Tree.java" />
         <option value="$PROJECT_DIR$/src/bit/minisys/minicc/parser/Token.java" />
         <option value="$PROJECT_DIR$/src/bit/minisys/minicc/parser/Item.java" />
-        <option value="$PROJECT_DIR$/src/bit/minisys/minicc/parser/SyntaxTree.java" />
         <option value="$PROJECT_DIR$/config.xml" />
         <option value="$PROJECT_DIR$/src/bit/minisys/minicc/MiniCCompiler.java" />
-        <option value="$PROJECT_DIR$/src/bit/minisys/minicc/parser/LRMaster.java" />
-        <option value="$PROJECT_DIR$/src/bit/minisys/minicc/parser/XyParser.java" />
         <option value="$PROJECT_DIR$/src/bit/minisys/minicc/BITMiniCC.java" />
         <option value="$PROJECT_DIR$/src/bit/minisys/minicc/scanner/XyScanner.java" />
+        <option value="$PROJECT_DIR$/src/bit/minisys/minicc/parser/Production.java" />
+        <option value="$PROJECT_DIR$/src/bit/minisys/minicc/parser/SyntaxTree.java" />
+        <option value="$PROJECT_DIR$/src/bit/minisys/minicc/parser/LRMaster.java" />
+        <option value="$PROJECT_DIR$/src/bit/minisys/minicc/parser/XyParser.java" />
       </list>
     </option>
   </component>
@@ -207,6 +206,32 @@
               <item name="bit-minic-compiler" type="b2602c69:ProjectViewProjectNode" />
               <item name="bit-minic-compiler" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="bit-minic-compiler" type="b2602c69:ProjectViewProjectNode" />
+              <item name="bit-minic-compiler" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="bit-minic-compiler" type="b2602c69:ProjectViewProjectNode" />
+              <item name="bit-minic-compiler" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="minicc" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="bit-minic-compiler" type="b2602c69:ProjectViewProjectNode" />
+              <item name="bit-minic-compiler" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="minicc" type="462c0819:PsiDirectoryNode" />
+              <item name="parser" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="bit-minic-compiler" type="b2602c69:ProjectViewProjectNode" />
+              <item name="bit-minic-compiler" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="minicc" type="462c0819:PsiDirectoryNode" />
+              <item name="parser" type="462c0819:PsiDirectoryNode" />
+              <item name="SyntaxTree.java" type="529ef68f:ClassesTreeStructureProvider$PsiClassOwnerTreeNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -217,8 +242,9 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1559398762398" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1559474856909" />
     <property name="last_opened_file_path" value="$USER_HOME$/Desktop/bit-minic-compiler" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -241,7 +267,7 @@
     <configuration name="BITMiniCC" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="bit.minisys.minicc.BITMiniCC" />
       <module name="bit-minic-compiler" />
-      <option name="PROGRAM_PARAMETERS" value="..\a.c" />
+      <option name="PROGRAM_PARAMETERS" value="input/a.c" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -277,10 +303,10 @@
     <option name="totallyTimeSpent" value="251000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="70" y="-8" width="1858" height="1096" extended-state="6" />
+    <frame x="71" y="0" width="935" height="1087" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.13681869" />
+      <window_info content_ui="combo" id="Project" order="0" weight="0.28114286" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -290,8 +316,8 @@
       <window_info id="Favorites" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3298647" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.301769" />
-      <window_info anchor="bottom" id="Debug" order="3" visible="true" weight="0.31633714" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.26365545" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.2623295" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -443,13 +469,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/bit/minisys/minicc/parser/Action.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="184">
-          <caret line="8" column="67" selection-start-line="8" selection-start-column="67" selection-end-line="8" selection-end-column="67" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/bit/minisys/minicc/parser/IMiniCCParser.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="92">
@@ -457,30 +476,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/bit/minisys/minicc/parser/Production.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="414">
-          <caret line="30" column="42" selection-start-line="30" selection-start-column="42" selection-end-line="30" selection-end-column="42" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/bit/minisys/minicc/parser/Token.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="161">
           <caret line="7" column="72" selection-start-line="7" selection-start-column="72" selection-end-line="7" selection-end-column="72" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/bit/minisys/minicc/parser/Item.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="437">
-          <caret line="38" selection-start-line="38" selection-end-line="38" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -498,20 +497,57 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/bit/minisys/minicc/parser/SyntaxTree.java">
+    <entry file="file://$PROJECT_DIR$/src/bit/minisys/minicc/scanner/XyScanner.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="56" column="53" selection-start-line="56" selection-start-column="53" selection-end-line="56" selection-end-column="53" />
+        <state relative-caret-position="69">
+          <caret line="42" column="19" lean-forward="true" selection-start-line="42" selection-start-column="19" selection-end-line="42" selection-end-column="19" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/bit/minisys/minicc/BITMiniCC.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="262">
+          <caret line="26" selection-start-line="26" selection-end-line="26" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/bit/minisys/minicc/parser/Production.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="368">
+          <caret line="18" column="28" selection-start-line="18" selection-start-column="28" selection-end-line="18" selection-end-column="28" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/bit/minisys/minicc/parser/Item.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="506">
+          <caret line="22" column="35" selection-start-line="22" selection-start-column="35" selection-end-line="22" selection-end-column="35" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/bit/minisys/minicc/parser/Action.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="115">
+          <caret line="5" column="15" selection-start-line="5" selection-start-column="15" selection-end-line="5" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/bit/minisys/minicc/parser/LRMaster.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="386">
-          <caret line="65" column="23" selection-start-line="65" selection-start-column="23" selection-end-line="65" selection-end-column="23" />
+        <state relative-caret-position="230">
+          <caret line="40" lean-forward="true" selection-start-line="40" selection-end-line="40" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -520,8 +556,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/bit/minisys/minicc/parser/XyParser.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="207">
-          <caret line="20" column="50" selection-start-line="20" selection-start-column="50" selection-end-line="20" selection-end-column="50" />
+        <state relative-caret-position="414">
+          <caret line="20" column="45" selection-start-line="20" selection-start-column="45" selection-end-line="20" selection-end-column="45" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -530,25 +566,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/bit/minisys/minicc/MiniCCompiler.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="754">
+        <state relative-caret-position="58">
           <caret line="98" column="4" selection-start-line="98" selection-start-column="4" selection-end-line="98" selection-end-column="4" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/bit/minisys/minicc/BITMiniCC.java">
+    <entry file="file://$PROJECT_DIR$/src/bit/minisys/minicc/parser/SyntaxTree.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="460">
-          <caret line="31" column="4" selection-start-line="31" selection-start-column="4" selection-end-line="31" selection-end-column="4" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/bit/minisys/minicc/scanner/XyScanner.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="299">
-          <caret line="40" column="68" selection-start-line="40" selection-start-column="68" selection-end-line="40" selection-end-column="68" />
+        <state relative-caret-position="2477">
+          <caret line="118" column="32" selection-start-line="118" selection-start-column="32" selection-end-line="118" selection-end-column="32" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

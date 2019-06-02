@@ -288,8 +288,6 @@ public class LRMaster {
                     gotoTable.get(i).put(item.right[item.dotIndex],move);
             }
         }
-
-        System.out.println(" ");
     }
 
     private int getGOTOIndex(ArrayList<Item> I, String symbol){
